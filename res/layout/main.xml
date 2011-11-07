@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<TableRow>
+	<Button android:id="@+id/btnStart"
+		android:text="Start"
+		android:textSize="36sp"
+		android:layout_height="80dp"
+		android:layout_weight="0.5"
+		android:hapticFeedbackEnabled="true"
+	/>
+	<Button android:id="@+id/btnStop"
+		android:text="Stop"
+		android:textSize="36sp"
+		android:layout_height="80dp"
+		android:layout_weight="0.5"
+		android:hapticFeedbackEnabled="true"
+	/>
+</TableRow>
+<TableRow>
+	<Chronometer android:id="@+id/chronometer1"
+		android:layout_width="fill_parent" 
+		android:layout_height="80dp"
+		android:textSize="36sp"
+		android:layout_weight="1"
+		android:layout_gravity="center_horizontal">
+	</Chronometer>
+</TableRow>
+<TableRow>
+	<Button android:id="@+id/btnTask1"
+		android:text="Task 1"
+		android:textSize="36sp"
+		android:layout_height="160dp"
+		android:layout_weight="0.5"
+	/>
+	<Button android:id="@+id/btnTask2"
+		android:text="Task 2"
+		android:textSize="36sp"
+		android:layout_height="160dp"
+		android:layout_weight="0.5"
+	/>
+</TableRow>
+<TableRow>
+	<Button android:id="@+id/btnTask3"
+		android:text="Task 3"
+		android:textSize="36sp"
+		android:layout_height="160dp"
+		android:layout_weight="0.5"
+	/>
+	<Button android:id="@+id/btnTask4"
+		android:text="Task 4"
+		android:textSize="36sp"
+		android:layout_height="160dp"
+		android:layout_weight="0.5"
+	/>
+</TableRow>
+<TableRow>
+	<Button android:id="@+id/btnTask5"
+		android:text="Task 5"
+		android:textSize="36sp"
+		android:layout_height="160dp"
+		android:layout_weight="0.5"
+	/>
+	<Button android:id="@+id/btnTask6"
+		android:text="Task 6"
+		android:textSize="36sp"
+		android:layout_height="160dp"
+		android:layout_weight="0.5"
+	/>
+</TableRow>
+<TableRow>
+	<Button android:id="@+id/btnTask7"
+		android:text="Task 7"
+		android:textSize="36sp"
+		android:layout_height="160dp"
+		android:layout_weight="0.5"
+	/>
+	<Button android:id="@+id/btnTask8"
+		android:text="Task 8"
+		android:textSize="36sp"
+		android:layout_height="160dp"
+		android:layout_weight="0.5"
+	/>
+</TableRow>
+<TableRow>
+	<Button android:id="@+id/btnTask9"
+		android:text="Task 9"
+		android:textSize="36sp"
+		android:layout_height="160dp"
+		android:layout_weight="0.5"
+	/>
+	<Button android:id="@+id/btnTask10"
+		android:text="Task 10"
+		android:textSize="36sp"
+		android:layout_height="160dp"
+		android:layout_weight="0.5"
+	/>
+</TableRow>
+<TableRow>
+	<TextView
+		android:layout_height="80dp" 
+	/>
+</TableRow>
+<TableRow>
+	<Button android:id="@+id/btnPicture"
+		android:text="Picture"
+		android:textSize="36sp"
+		android:layout_height="80dp"
+		android:layout_weight="0.5"
+	/>
+	<Button android:id="@+id/btnNote"
+		android:text="Voice Note"
+		android:textSize="36sp"
+		android:layout_height="80dp"
+		android:layout_weight="0.5"
+	/>
+</TableRow>
+</TableLayout>
