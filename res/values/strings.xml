@@ -2,4 +2,14 @@
 <resources>
     <string name="hello">Hello World, TimeAndMotionStudyActivity!</string>
     <string name="app_name">TimeAndMotionStudy</string>
+    <string name="Task1">Task 1</string>
+	<string name="Task2">Task 2</string>
+	<string name="Task3">Task 3</string>
+	<string name="Task4">Task 4</string>
+	<string name="Task5">Task 5</string>
+	<string name="Task6">Task 6</string>
+	<string name="Task7">Task 7</string>
+	<string name="Task8">Task 8</string>
+	<string name="Task9">Task 9</string>
+	<string name="Task10">Task 10</string>
 </resources>

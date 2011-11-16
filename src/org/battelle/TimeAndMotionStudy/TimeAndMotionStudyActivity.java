@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Chronometer;
 import android.widget.Chronometer.OnChronometerTickListener;
 import android.widget.Toast;
@@ -26,106 +27,100 @@ public class TimeAndMotionStudyActivity extends Activity {
 	Button btnTask8;
 	Button btnTask9;
 	Button btnTask10;
-	Button btnPicture;
-	Button btnNote;
+	ImageButton btnPicture;
+	ImageButton btnNote;
 	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        //calls the parent's onCreate
+        //"super.onCreate" calls the parent's onCreate
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        
-
         
         mChronometer = (Chronometer) findViewById(R.id.chronometer1);
         //mChronometer.setFormat("HH:MM:SS.SS");
         
         //(Button) is a cast. findViewById returns a view object, the (Button) CASTS it as a button object
-    	btnStart = (Button) findViewById(R.id.btnStart);
-    	btnStop  = (Button) findViewById(R.id.btnStop);
+    	btnStart =   (Button) findViewById(R.id.btnStart);
+    	btnStop  =   (Button) findViewById(R.id.btnStop);
+    	btnTask1 =   (Button) findViewById(R.id.btnTask1);
+    	btnTask2 =   (Button) findViewById(R.id.btnTask2);
+    	btnTask3 =   (Button) findViewById(R.id.btnTask3);
+    	btnTask4 =   (Button) findViewById(R.id.btnTask4);
+    	btnTask5 =   (Button) findViewById(R.id.btnTask5);
+    	btnTask6 =   (Button) findViewById(R.id.btnTask6);
+    	btnTask7 =   (Button) findViewById(R.id.btnTask7);
+    	btnTask8 =   (Button) findViewById(R.id.btnTask8);
+    	btnTask9 =   (Button) findViewById(R.id.btnTask9);
+    	btnTask10 =  (Button) findViewById(R.id.btnTask10);
+    	btnPicture = (ImageButton) findViewById(R.id.btnPicture);
+    	btnNote =    (ImageButton) findViewById(R.id.btnNote);
     	
-    	btnStart.setOnClickListener(btnStartOnClickListener());
-        btnStop.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View v) {
-        		String elapsedTimeStr;
-        		long elapsedTime = 0;
-        		long minutes = ((elapsedTime)/1000)/60;
-			    long seconds = ((elapsedTime)/1000)%60;
-			    elapsedTimeStr = minutes+":0"+seconds;
-        		Toast.makeText(getApplicationContext(), elapsedTimeStr, Toast.LENGTH_SHORT).show();
-        		mChronometer.stop();
-        		btnStart.setText("Start");
-        	}
-        });
-        btnTask1 = (Button) findViewById(R.id.btnTask1);
+    	//moved the function lower in the file
+    	btnStart.setOnClickListener(btnStartOnClickListener());  	
+        btnStop.setOnClickListener(btnStopOnClickListener());
+        
+        //the onClickListener for these buttons might be able to be combined if you can tell the 
+        //name of the view that called the listener. The function for all of them is the same, writing 
+        //the task name and timestamp to file/data
         btnTask1.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
         		Toast.makeText(getApplicationContext(), "Task 1", Toast.LENGTH_SHORT).show();
         	}
         });
-        btnTask2 = (Button) findViewById(R.id.btnTask2);
         btnTask2.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
         		Toast.makeText(getApplicationContext(), "Task 2", Toast.LENGTH_SHORT).show();
         	}
         });
-        btnTask3 = (Button) findViewById(R.id.btnTask3);
         btnTask3.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
         		Toast.makeText(getApplicationContext(), "Task 3", Toast.LENGTH_SHORT).show();
         	}
         });
-        btnTask4 = (Button) findViewById(R.id.btnTask4);
         btnTask4.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
         		Toast.makeText(getApplicationContext(), "Task 4", Toast.LENGTH_SHORT).show();
         	}
         });
-        btnTask5 = (Button) findViewById(R.id.btnTask5);
         btnTask5.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
         		Toast.makeText(getApplicationContext(), "Task 5", Toast.LENGTH_SHORT).show();
         	}
         });
-        btnTask6 = (Button) findViewById(R.id.btnTask6);
         btnTask6.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
         		Toast.makeText(getApplicationContext(), "Task 6", Toast.LENGTH_SHORT).show();
         	}
         });
-        btnTask7 = (Button) findViewById(R.id.btnTask7);
         btnTask7.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
         		Toast.makeText(getApplicationContext(), "Task 7", Toast.LENGTH_SHORT).show();
         	}
         });
-        btnTask8 = (Button) findViewById(R.id.btnTask8);
         btnTask8.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
         		Toast.makeText(getApplicationContext(), "Task 8", Toast.LENGTH_SHORT).show();
         	}
         });
-        btnTask9 = (Button) findViewById(R.id.btnTask9);
         btnTask9.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
         		Toast.makeText(getApplicationContext(), "Task 9", Toast.LENGTH_SHORT).show();
         	}
         });
-        btnTask10 = (Button) findViewById(R.id.btnTask10);
         btnTask10.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
         		Toast.makeText(getApplicationContext(), "Task 10", Toast.LENGTH_SHORT).show();
         	}
         });
-        btnPicture = (Button) findViewById(R.id.btnPicture);
+        
         btnPicture.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
         		Toast.makeText(getApplicationContext(), "Take a picture", Toast.LENGTH_SHORT).show();
         	}
         });
-        btnNote = (Button) findViewById(R.id.btnNote);
+        
         btnNote.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
         		Toast.makeText(getApplicationContext(), "record a voice note", Toast.LENGTH_SHORT).show();
@@ -180,7 +175,6 @@ public class TimeAndMotionStudyActivity extends Activity {
     private View.OnClickListener btnStartOnClickListener() {
     	return new View.OnClickListener() {
         	public void onClick(View v) {
-        	    	
         		Toast.makeText(getApplicationContext(), btnStart.getText(), Toast.LENGTH_SHORT).show();
         		if (btnStart.getText().equals("Start"))
         			//Jess said to make this one line for best practices. Got rid of the brackets {}. makes it easier to read
@@ -196,7 +190,22 @@ public class TimeAndMotionStudyActivity extends Activity {
         	}
         };
     }
-    
+
+    private View.OnClickListener btnStopOnClickListener() {
+    	return new View.OnClickListener() {
+    		public void onClick(View v) {
+    			String elapsedTimeStr;
+    			long elapsedTime = 0;
+    			long minutes = ((elapsedTime)/1000)/60;
+    			long seconds = ((elapsedTime)/1000)%60;
+    			elapsedTimeStr = minutes+":0"+seconds;
+    			Toast.makeText(getApplicationContext(), elapsedTimeStr, Toast.LENGTH_SHORT).show();
+    			mChronometer.stop();
+    			btnStart.setText("Start");
+    		}
+    	};
+    }
+
     //from above
     private void startChronometer(){
     	String currentTime = "";

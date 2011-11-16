@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout 
-	xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent" 
+    android:layout_width="match_parent">
 <TableRow>
 	<Button android:id="@+id/btnStart"
 		android:text="Start"
@@ -105,17 +103,15 @@
 	/>
 </TableRow>
 <TableRow>
-	<Button android:id="@+id/btnPicture"
-		android:text="Picture"
-		android:textSize="36sp"
+	<ImageButton android:id="@+id/btnPicture"
+		android:src="@android:drawable/ic_menu_camera"
 		android:layout_height="80dp"
 		android:layout_weight="0.5"
-	/>
-	<Button android:id="@+id/btnNote"
-		android:text="Voice Note"
-		android:textSize="36sp"
+	></ImageButton>
+	<ImageButton android:id="@+id/btnNote"
+		android:src="@android:drawable/ic_btn_speak_now"
 		android:layout_height="80dp"
 		android:layout_weight="0.5"
-	/>
+	></ImageButton>
 </TableRow>
 </TableLayout>
