@@ -17,4 +17,17 @@
 	<string name="btnStartStop">Start</string>
 	<string name="btnReset">Reset</string>
 	<string name="VoiceRecordInst">Use the back button after recording your note</string>
+	<string name="btnSaveConfig">Save</string>
+	<string name="btnCancelConfig">Cancel</string>
+	<string-array name="planets_array">
+		<item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+	</string-array>
+	<string name="spTests">Tests</string>
 </resources>
