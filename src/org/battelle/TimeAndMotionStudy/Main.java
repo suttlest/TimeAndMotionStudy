@@ -1,10 +1,14 @@
 package org.battelle.TimeAndMotionStudy;
 
 import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -84,13 +88,19 @@ public class Main extends Activity {
 
 		btnPicture.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), "Take a picture", Toast.LENGTH_SHORT).show();
+				Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+				startActivity(cameraIntent);
 			}
 		});
 
 		btnNote.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), "record a voice note", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), getString(R.string.VoiceRecordInst), Toast.LENGTH_LONG).show();
+				Intent VoiceRecordIntent = new Intent(Intent.ACTION_MAIN);
+				PackageManager manager = getPackageManager();
+				VoiceRecordIntent = manager.getLaunchIntentForPackage("com.tokasiki.android.voicerecorder");
+				VoiceRecordIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+				startActivity(VoiceRecordIntent);
 			}
 		});
 	}
@@ -134,7 +144,6 @@ public class Main extends Activity {
 		if (!(chronoRunFlag)) {
 			mChronometer.setBase(SystemClock.elapsedRealtime());
 			chronoRunFlag = true;
-			elapsedTime = 0;
 		}
 		//The stop watch was just paused
 		else{
@@ -159,6 +168,7 @@ public class Main extends Activity {
 		mChronometer.stop();
 		mChronometer.setBase(SystemClock.elapsedRealtime());
 		chronoRunFlag = false;
+		elapsedTime = 0;
 	}
 
 	@Override

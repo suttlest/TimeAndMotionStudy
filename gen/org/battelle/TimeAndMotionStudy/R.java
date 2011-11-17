@@ -73,6 +73,7 @@ public final class R {
         public static final int Task8=0x7f040008;
         public static final int Task9=0x7f040009;
         public static final int TestName=0x7f04000b;
+        public static final int VoiceRecordInst=0x7f040010;
         public static final int app_name=0x7f040000;
         public static final int btnAddTest=0x7f04000c;
         public static final int btnDeleteTest=0x7f04000d;

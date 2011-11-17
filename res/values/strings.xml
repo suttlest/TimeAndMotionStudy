@@ -16,4 +16,5 @@
 	<string name="btnDeleteTest">Delete Test</string>
 	<string name="btnStartStop">Start</string>
 	<string name="btnReset">Reset</string>
+	<string name="VoiceRecordInst">Use the back button after recording your note</string>
 </resources>
